@@ -3981,3 +3981,451 @@ Migrating to CreatePosts (20091103212334)
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
   [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("posts")[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-07 14:14:01) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/prototype.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-01-07 14:14:06) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 1656ms (View: 1641, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-01-07 14:14:10) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (312.0ms)
+Completed in 343ms (View: 328, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-01-07 14:16:01) [POST]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"XjLUTPdq7ogLq5ynrkYapRFpICRMAAY//MZZYkszCAM=", "post"=>{"created_at(1i)"=>"2010", "category"=>"Accessories", "created_at(2i)"=>"1", "body"=>"I find that this is a great example of managing style", "title"=>"this is pretty sweet", "created_at(3i)"=>"7", "created_at(4i)"=>"16", "created_at(5i)"=>"15", "live"=>"Published"}}
+WARNING: Can't mass-assign these protected attributes: created_at(1i), created_at(2i), created_at(3i), created_at(4i), created_at(5i)
+  [4;35;1mPost Create (0.0ms)[0m   [0mINSERT INTO "posts" ("category", "updated_at", "title", "body", "live", "created_at") VALUES('Accessories', '2010-01-07 20:16:01', 'this is pretty sweet', 'I find that this is a great example of managing style', 'f', '2010-01-07 20:16:01')[0m
+Redirected to http://localhost:3003/posts/1
+Completed in 234ms (DB: 0) | 302 Found [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-01-07 14:16:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 31ms (View: 15, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-01-07 14:16:05) [GET]
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-01-07 14:16:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#edit (for 127.0.0.1 at 2010-01-07 14:16:13) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering posts/edit
+Rendered posts/_form (641.0ms)
+Completed in 656ms (View: 656, DB: 0) | 200 OK [http://localhost/posts/1/edit]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-01-07 14:16:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-01-07 14:16:23) [GET]
+  [4;35;1mPost Load (15.0ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 15ms (View: 0, DB: 15) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-01-07 14:16:26) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (141.0ms)
+Completed in 188ms (View: 157, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-01-07 14:22:12) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+
+ActionView::TemplateError (Missing template posts/_swither.erb in view path app/views) on line #3 of app/views/posts/new.html.haml:
+1: - title "New Post"
+2: 
+3: - render :partial => 'swither'
+4: 
+5: 
+6: #form{:class=>params[:form]}= render :partial => 'form'
+
+    haml (2.2.6) [v] lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (2.2.6) [v] lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.6) [v] lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/views/posts/new.html.haml:3:in `_run_haml_app47views47posts47new46html46haml'
+    haml (2.2.6) [v] lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.6) [v] lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.6) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (188.0ms)
+Rendered rescues/_request_and_response (15.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-01-07 14:22:59) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_switcher (15.0ms)
+Rendered posts/_form (16.0ms)
+Completed in 62ms (View: 62, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-01-07 14:23:10) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_switcher (0.0ms)
+Rendered posts/_form (15.0ms)
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-01-07 14:23:11) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_switcher (0.0ms)
+Rendered posts/_form (16.0ms)
+Completed in 46ms (View: 46, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-01-07 14:23:25) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_switcher (0.0ms)
+Rendered posts/_form (31.0ms)
+Completed in 47ms (View: 47, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-01-07 14:23:39) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+
+ActionView::TemplateError (Missing template posts/_switcher2.erb in view path app/views) on line #3 of app/views/posts/new.html.haml:
+1: - title "New Post"
+2: 
+3: - render :partial => 'switcher2'
+4: 
+5: 
+6: #form{:class=>params[:form]}= render :partial => 'form'
+
+    haml (2.2.6) [v] lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (2.2.6) [v] lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.6) [v] lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/views/posts/new.html.haml:3:in `_run_haml_app47views47posts47new46html46haml'
+    haml (2.2.6) [v] lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.6) [v] lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.6) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (171.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-01-07 14:23:46) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_switcher (0.0ms)
+Rendered posts/_form (16.0ms)
+Completed in 47ms (View: 32, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-01-07 14:24:36) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_switcher (0.0ms)
+Rendered posts/_form (62.0ms)
+Completed in 171ms (View: 171, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-01-07 14:25:03) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_switcher (0.0ms)
+Rendered posts/_form (31.0ms)
+Completed in 47ms (View: 47, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-01-07 14:25:11) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_switcher (0.0ms)
+Rendered posts/_form (31.0ms)
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-01-07 14:25:18) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_switcher (0.0ms)
+Rendered posts/_form (15.0ms)
+Completed in 47ms (View: 47, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-01-07 14:25:27) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_switcher (0.0ms)
+Rendered posts/_form (32.0ms)
+Completed in 47ms (View: 32, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-07 14:28:03) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/prototype.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-07 14:28:03) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/effects.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-07 14:28:05) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/prototype.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-07 14:28:05) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/effects.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-07 14:28:22) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/prototype.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-07 14:28:23) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/prototype.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-07 14:28:23) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/effects.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-01-07 14:28:48) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 31ms (View: 31, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-01-07 14:28:52) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_switcher (0.0ms)
+Rendered posts/_form (94.0ms)
+Completed in 172ms (View: 172, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-01-07 14:30:34) [GET]
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 15ms (View: 15, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-01-07 14:30:38) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-01-07 14:30:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_switcher (0.0ms)
+Completed in 32ms (View: 16, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-01-07 14:31:02) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-01-07 14:31:05) [GET]
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-01-07 14:31:11) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_switcher (0.0ms)
+Completed in 31ms (View: 15, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-01-07 14:31:22) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_switcher (0.0ms)
+Rendered posts/_form (16.0ms)
+Completed in 47ms (View: 32, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-01-07 14:31:25) [GET]
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_switcher (0.0ms)
+Completed in 15ms (View: 0, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#edit (for 127.0.0.1 at 2010-01-07 14:31:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering posts/edit
+Rendered posts/_form (219.0ms)
+Completed in 235ms (View: 235, DB: 0) | 200 OK [http://localhost/posts/1/edit]
+
+
+Processing PostsController#edit (for 127.0.0.1 at 2010-01-07 14:31:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering posts/edit
+Rendered posts/_switcher (0.0ms)
+Rendered posts/_form (141.0ms)
+Completed in 172ms (View: 172, DB: 0) | 200 OK [http://localhost/posts/1/edit]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-01-07 14:32:18) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-01-07 14:32:21) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_switcher (0.0ms)
+Rendered posts/_form (31.0ms)
+Completed in 46ms (View: 46, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-01-07 14:33:43) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_switcher (0.0ms)
+Rendered posts/_form (31.0ms)
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-01-07 14:34:02) [GET]
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 93ms (View: 15, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#edit (for 127.0.0.1 at 2010-01-07 14:34:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering posts/edit
+Rendered posts/_switcher (0.0ms)
+Rendered posts/_form (16.0ms)
+Completed in 46ms (View: 46, DB: 0) | 200 OK [http://localhost/posts/1/edit]
+
+
+Processing PostsController#edit (for 127.0.0.1 at 2010-01-07 14:35:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering posts/edit
+Rendered posts/_switcher (0.0ms)
+Rendered posts/_form (31.0ms)
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/posts/1/edit]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-01-07 14:35:02) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_switcher (15.0ms)
+Completed in 31ms (View: 15, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-01-07 14:35:20) [GET]
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 15ms (View: 15, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-01-07 14:35:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 32ms (View: 16, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#edit (for 127.0.0.1 at 2010-01-07 14:35:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering posts/edit
+Rendered posts/_switcher (0.0ms)
+Rendered posts/_form (31.0ms)
+Completed in 46ms (View: 31, DB: 0) | 200 OK [http://localhost/posts/1/edit]
